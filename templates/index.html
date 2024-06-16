@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Monkey Blog</title>
+    <link rel="stylesheet" href="../static/style/main.css">
+    <link rel="stylesheet" href="../static/style/root.css">
+    <link rel="stylesheet" href="../static/style/switch_button.css">
+  </head>
+
+  <body class="{{ theme_color }}">
+
+    <!-- header app -->
+    <div class="header {{ theme_color }}">
+      <div class="header-left-logo">
+        <img height="45px" width="45px" src="../static/img/icons/monkey_logo_{{ theme_color }}.png" alt="">
+        <h1>Monkey</h1>
+      </div>
+
+      <div class="header-right-logo">
+        <!-- <label class="switch {{ theme_color }}">
+          <input type="checkbox" class="{{ theme_color }}" id="themeSwitch" {{ 'checked' if theme_color == 'dark' else '' }}>
+          <span class="slider round {{ theme_color }}"></span>
+        </label> -->
+        <button> Crie um Post</button>
+        <img src="" alt="">
+      </div>
+    </div>
+
+    <!-- posts list app -->
+    <main>
+
+    {% for id, user_name, title_post, content_post in post_items %}
+      <div class="container-post {{ theme_color }}">
+
+        <div class="header-post">
+          <span>
+            <img src="" alt="">
+            <p>{{ user_name }}</p>
+          </span>
+          <div>Curtir</div>
+        </div>
+
+        <div class="content-post">
+          <span>
+            <h2>{{ title_post }}</h2>
+            <p>{{ content_post }}</p>
+          </span>
+          <img src="" alt="">
+        </div>
+
+      </div>
+    {% endfor %}
+
+    </main>
+
+    <script>
+      document.getElementById('themeSwitch').addEventListener('change', function() {
+          var theme = this.checked ? 'dark' : 'light';
+          document.cookie = 'theme=' + theme + '; path=/';
+          location.reload(); // Recarrega a página para aplicar o novo tema
+      });
+
+      window.onload = function() {
+          var theme = document.cookie.split('; ').find(row => row.startsWith('theme=')).split('=')[1];
+          document.body.className = theme;
+          document.getElementById('themeSwitch').checked = (theme === 'dark');
+      };
+    </script>
+
+  </body>
+</html>

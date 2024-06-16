@@ -1,0 +1,126 @@
+
+/* white and black theme */
+:root {
+    --backgroundColor: white;
+    --colorBorderBottom: #111111;
+    --colorBorderBottomClean: #dcdcdc;
+    --colorText: #111111;
+    --backgroundColorImages: #a2a2a2;
+    --backgroundColorSlider: #111111;
+    --colorSlider: #dcdcdc;
+}
+
+.light {
+    --backgroundColor: white;
+    --colorBorderBottom: #111111;
+    --colorBorderBottomClean: #dcdcdc;
+    --colorText: #111111;
+    --backgroundColorImages: #a2a2a2;
+}
+
+.dark {
+    --backgroundColor: #111111;
+    --colorBorderBottom: white;
+    --colorBorderBottomClean: #dcdcdc;
+    --colorText: white;
+    --backgroundColorImages: #a2a2a2;
+}
+
+body, main {
+    background-color: var(--backgroundColor);
+    color: var(--colorText);
+}
+
+/* header app */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10px;
+    border-bottom: 0.5px solid var(--colorText);
+}
+
+.header-left-logo {
+    display: flex;
+    align-items: center;
+}
+
+.header-left-logo > img {
+    margin-right: 10px;
+}
+
+.header-right-logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-right-logo .switch{
+    margin-right: 10px;
+}
+
+.header-right-logo > button {
+    background-color: var(--backgroundColor);
+    margin-right: 10px;
+    border: none;
+    padding: 5px;
+    font-size: 12px;
+    color: var(--colorText);
+}
+
+.header-right-logo > img {
+    background-color: var(--backgroundColorImages);
+    border-radius: 60%;
+    height: 45px;
+    width: 45px;
+}
+
+/* post item */
+.container-post {
+    background-color: var(--backgroundColor);
+    max-width: 900px;
+    min-width: 500px;
+    margin: 10px 0px;
+    padding: 10px;
+}
+
+.header-post {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-post > span {
+    display: flex;
+    align-items: center;
+}
+
+.header-post > span > img {
+    background-color: var(--backgroundColorImages);
+    margin-right: 15px;
+    border-radius: 80%;
+    height: 25px;
+    width: 25px;
+}
+
+.content-post {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    height: 110px;
+    border-bottom: 0.5px solid var(--colorBorderBottomClean);
+}
+
+.content-post > img{
+    background-color: var(--backgroundColorImages);
+    height: 80px;
+    width: 120px;
+}
+
+.content-post > span {
+    margin-left: 10px;
+}
+
+.content-post > span > p {
+    margin-left: 8px;
+}
